@@ -1,10 +1,43 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    HI, here.
-  </body>
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>CHI-bbq</title>
+    <script type="text/javascript">
+        // 获取终端的相关信息
+        var Terminal = {
+            // 辨别移动终端类型
+            platform : function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    // android终端或者uc浏览器
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                    // 是否为iPhone或者QQHD浏览器
+                    iPhone: u.indexOf('iPhone') > -1 ,
+                    // 是否iPad
+                    iPad: u.indexOf('iPad') > -1
+                };
+            }(),
+            // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
+            language : (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+
+        // 根据不同的终端，跳转到不同的地址
+        var theUrl = '';
+        if(Terminal.platform.android){//安卓端
+
+            theUrl = 'https://play.google.com/store/apps/details?id=com.qili.bbq';
+            location.href = theUrl;
+        } else {
+            theUrl = 'https://itunes.apple.com/us/app/chi-bbq/id1460339013?l=zh&ls=1&mt=8';
+            location.href = theUrl;
+        }
+
+    </script>
+</head>
+<body>
+    <!--
+
+    -->
+</body>
 </html>
